@@ -13,6 +13,11 @@ use App\Tax\Infrastructure\Entrypoint\Http\GetController as TaxGetController;
 use App\Tax\Infrastructure\Entrypoint\Http\PostController as TaxPostController;
 use App\Tax\Infrastructure\Entrypoint\Http\PutController as TaxPutController;
 use App\User\Infrastructure\Entrypoint\Http\PostController;
+use App\Zone\Infrastructure\Entrypoint\Http\DeleteController as ZoneDeleteController;
+use App\Zone\Infrastructure\Entrypoint\Http\GetCollectionController as ZoneGetCollectionController;
+use App\Zone\Infrastructure\Entrypoint\Http\GetController as ZoneGetController;
+use App\Zone\Infrastructure\Entrypoint\Http\PostController as ZonePostController;
+use App\Zone\Infrastructure\Entrypoint\Http\PutController as ZonePutController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/users', PostController::class);
@@ -30,3 +35,9 @@ Route::get('/taxes/{id}', TaxGetController::class)->whereUuid('id');
 Route::post('/taxes', TaxPostController::class);
 Route::put('/taxes/{id}', TaxPutController::class)->whereUuid('id');
 Route::delete('/taxes/{id}', TaxDeleteController::class)->whereUuid('id');
+
+Route::get('/zones', ZoneGetCollectionController::class);
+Route::get('/zones/{id}', ZoneGetController::class)->whereUuid('id');
+Route::post('/zones', ZonePostController::class);
+Route::put('/zones/{id}', ZonePutController::class)->whereUuid('id');
+Route::delete('/zones/{id}', ZoneDeleteController::class)->whereUuid('id');
