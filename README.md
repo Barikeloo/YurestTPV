@@ -9,6 +9,9 @@ Este repositorio sirve como proyecto base para prácticas de desarrollo backend 
 
 - [Prerrequisitos](#prerrequisitos)
 - [Cómo empezar](#cómo-empezar)
+- [Estado del proyecto (23-03-2026)](#estado-del-proyecto-23-03-2026)
+- [Checklist de avance](#checklist-de-avance)
+- [Plan para retomar mañana](#plan-para-retomar-mañana)
 - [Estructura del proyecto](#estructura-del-proyecto)
   - [Backend (`backend/`)](#backend-backend)
   - [Frontend (`frontend/`)](#frontend-frontend)
@@ -66,6 +69,68 @@ Tras seguir estos pasos tendrás:
 - **API (Laravel):** [http://localhost:8000](http://localhost:8000)
 - **Frontend (Angular):** [http://localhost:4200](http://localhost:4200)
 - **DbGate (MySQL):** [http://localhost:9051](http://localhost:9051) (conexión **Training MySQL** preconfigurada)
+
+---
+
+## Estado del proyecto (23-03-2026)
+
+Este bloque sirve como resumen para retomar rápido el trabajo.
+
+- **Hito 1 (Modelo de datos):** completado
+   - Migraciones TPV creadas
+   - Relaciones entre tablas creadas con claves foráneas
+   - Seeders con datos de prueba
+
+- **Hito 2 (API Backoffice):** en progreso
+   - `families`: CRUD completo + activar/desactivar + tests
+   - `taxes`: CRUD completo + tests
+   - `zones`: CRUD completo + tests
+   - Pendiente para cerrar hito: `tables` y `products`
+
+- **Estado de tests backend:** en verde
+   - Última ejecución conocida: `12 tests`, `81 assertions`, todo OK
+
+- **Repositorio remoto de trabajo:**
+   - `origin`: `https://github.com/Barikeloo/YurestTPV.git`
+   - `upstream`: `https://github.com/yurest/2026-training-laravel-angular.git`
+
+---
+
+## Checklist de avance
+
+### Hito 1
+- [x] Migraciones de entidades TPV
+- [x] Relaciones de base de datos
+- [x] Seeders con datos de trabajo
+- [x] Validación con migración limpia + seed
+
+### Hito 2
+- [x] CRUD `families`
+- [x] Activar/desactivar `families`
+- [x] CRUD `taxes`
+- [x] CRUD `zones`
+- [ ] CRUD `tables`
+- [ ] CRUD `products`
+
+---
+
+## Plan para retomar mañana
+
+Orden recomendado para terminar Hito 2:
+
+1. Implementar CRUD de `tables` (depende de `zones`).
+2. Implementar CRUD de `products` (depende de `families` y `taxes`).
+3. Revisar validaciones y respuestas de error para homogeneidad.
+4. Ejecutar `make test` y dejar todo en verde.
+5. Commit + push con mensaje claro del cierre del hito.
+
+Comandos útiles:
+
+```bash
+make test
+make db-migrate
+docker compose exec api php artisan migrate:fresh --seed
+```
 
 ---
 
