@@ -3,7 +3,13 @@
     <div class="layout-header-inner">
       <a routerLink="/" class="layout-brand">Training</a>
       <nav class="layout-nav">
-        <a routerLink="/register" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Registro</a>
+        @if (isAuthenticated()) {
+          <a routerLink="/backoffice" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Backoffice</a>
+          <button type="button" class="logout-button" (click)="onLogout()">Cerrar sesion</button>
+        } @else {
+          <a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Login</a>
+          <a routerLink="/register" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Registro</a>
+        }
       </nav>
     </div>
   </header>

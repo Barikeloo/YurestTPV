@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AuthStateService } from './core/auth/auth-state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+  private readonly authState = inject(AuthStateService);
+
   protected readonly title = signal('training-frontend');
+
+  constructor() {
+    this.authState.initializeSession().subscribe();
+  }
 }

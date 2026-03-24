@@ -9,7 +9,7 @@ Este repositorio sirve como proyecto base para prácticas de desarrollo backend 
 
 - [Prerrequisitos](#prerrequisitos)
 - [Cómo empezar](#cómo-empezar)
-- [Estado del proyecto (23-03-2026)](#estado-del-proyecto-23-03-2026)
+- [Estado del proyecto (24-03-2026)](#estado-del-proyecto-24-03-2026)
 - [Checklist de avance](#checklist-de-avance)
 - [Plan para retomar mañana](#plan-para-retomar-mañana)
 - [Estructura del proyecto](#estructura-del-proyecto)
@@ -72,7 +72,7 @@ Tras seguir estos pasos tendrás:
 
 ---
 
-## Estado del proyecto (23-03-2026)
+## Estado del proyecto (24-03-2026)
 
 Este bloque sirve como resumen para retomar rápido el trabajo.
 
@@ -81,14 +81,15 @@ Este bloque sirve como resumen para retomar rápido el trabajo.
    - Relaciones entre tablas creadas con claves foráneas
    - Seeders con datos de prueba
 
-- **Hito 2 (API Backoffice):** en progreso
+- **Hito 2 (API Backoffice):** completado
    - `families`: CRUD completo + activar/desactivar + tests
    - `taxes`: CRUD completo + tests
    - `zones`: CRUD completo + tests
-   - Pendiente para cerrar hito: `tables` y `products`
+   - `tables`: CRUD completo + tests
+   - `products`: CRUD completo + activar/desactivar + tests
 
 - **Estado de tests backend:** en verde
-   - Última ejecución conocida: `12 tests`, `81 assertions`, todo OK
+   - Última ejecución conocida: `14 tests`, `114 assertions`, todo OK
 
 - **Repositorio remoto de trabajo:**
    - `origin`: `https://github.com/Barikeloo/YurestTPV.git`
@@ -109,20 +110,20 @@ Este bloque sirve como resumen para retomar rápido el trabajo.
 - [x] Activar/desactivar `families`
 - [x] CRUD `taxes`
 - [x] CRUD `zones`
-- [ ] CRUD `tables`
-- [ ] CRUD `products`
+- [x] CRUD `tables`
+- [x] CRUD `products`
+- [x] Activar/desactivar `products`
 
 ---
 
 ## Plan para retomar mañana
 
-Orden recomendado para terminar Hito 2:
+Hito 2 ya está cerrado. Orden recomendado para continuar:
 
-1. Implementar CRUD de `tables` (depende de `zones`).
-2. Implementar CRUD de `products` (depende de `families` y `taxes`).
-3. Revisar validaciones y respuestas de error para homogeneidad.
-4. Ejecutar `make test` y dejar todo en verde.
-5. Commit + push con mensaje claro del cierre del hito.
+1. Revisar `ROADMAP.md` para definir el siguiente hito funcional.
+2. Priorizar casos de uso de negocio del siguiente bloque (ventas, líneas de venta, caja, etc.).
+3. Mantener la misma estrategia: implementar por dominio + tests de feature.
+4. Ejecutar `make test` en cada avance y dejar siempre en verde.
 
 Comandos útiles:
 

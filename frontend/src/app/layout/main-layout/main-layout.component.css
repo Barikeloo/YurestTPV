@@ -51,6 +51,19 @@
   background: rgba(0, 0, 0, 0.08);
 }
 
+.logout-button {
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  color: inherit;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .layout-main {
   flex: 1;
   max-width: 1200px;

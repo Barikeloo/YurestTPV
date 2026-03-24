@@ -12,3 +12,20 @@ export interface CreateUserResponse {
   created_at: string;
   updated_at: string;
 }
+
+export interface LoginUserRequest {
+  email: string;
+  password: string;
+}
+
+export interface LoginUserResponse {
+  success: boolean;
+  id: string;
+  name: string;
+  email: string;
+}
+
+export interface LogoutUserResponse {
+  success: boolean;
+  message: string;
+}

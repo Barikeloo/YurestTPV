@@ -1,0 +1,32 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 24rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.form-level-error {
+  margin-bottom: 1rem;
+  color: var(--mat-form-field-error-text-color, #b00020);
+}
+
+.login-result {
+  margin-top: 1.5rem;
+  max-width: 36rem;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fafafa;
+}
+
+.login-result h2 {
+  margin-top: 0;
+}

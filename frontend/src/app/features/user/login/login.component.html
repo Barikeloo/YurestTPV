@@ -1,0 +1,36 @@
+<h1>Iniciar sesion</h1>
+
+@if (formLevelMessage) {
+  <p class="form-level-error" role="alert">{{ formLevelMessage }}</p>
+}
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" />
+    @if (getFieldError('email')) {
+      <mat-error>{{ getFieldError('email') }}</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Contraseña</mat-label>
+    <input matInput formControlName="password" type="password" />
+    @if (getFieldError('password')) {
+      <mat-error>{{ getFieldError('password') }}</mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || submitting">
+    {{ submitting ? 'Entrando...' : 'Entrar' }}
+  </button>
+</form>
+
+@if (loggedUser(); as user) {
+  <section class="login-result" aria-live="polite">
+    <h2>Sesion iniciada</h2>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Nombre:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+  </section>
+}
